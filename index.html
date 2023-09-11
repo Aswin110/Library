@@ -22,17 +22,17 @@
             <div class="field">
               <span class="control">
                 <label for="Book">Book</label>
-                <input  type="text" id="Book" placeholder="Text input" required>
+                <input  type="text" id="Book" placeholder="Name of the book" value="hobbit" required>
               </span>
               
               <span class="control">
-                <label for="title">Title</label>
-                <input  type="text" id="titile" placeholder="Text input" required>
+                <label for="title">Author</label>
+                <input  type="text" id="title" placeholder="Author's name" value="JJK" required>
               </span>
               
               <span class="control">
                 <label for="pages">Pages</label>
-                <input  type="number" id="pages" placeholder="Text input" min="0" required>
+                <input  type="number" id="pages" placeholder="Pages.." min="0" value="200" required>
               </span>
 
               <span class="control">
@@ -43,10 +43,20 @@
                 </select>
               </span>
 
-              <span class="control"><button type="submit">submit</button></span>
+              <span class="control"><button type="submit" id="submit">submit</button></span>
             </div>
           </form>
-          <div class="grid-container">table</div>
+          <div class="grid-container">
+            <table id="table">
+              <tr>
+                <th>Book</th>
+                <th>Title</th>
+                <th>Pages</th>
+                <th>Read or not</th>
+                <th>Remove</th>
+              </tr>
+            </table>
+          </div>
 
         </div>
       </div>
