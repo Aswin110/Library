@@ -35,6 +35,7 @@ document.getElementById("submit").onclick = function () {
 
   let removeButton = document.createElement("button");
   removeButton.textContent = "remove";
+  removeButton.id = "btn"
 
   this.row = row;
   let CurrentRow = this.row
