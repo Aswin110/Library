@@ -1,23 +1,6 @@
 import './style.css'
 
-const myLibrary = [];
-
-function Book(title,author,pages,readOrNot){
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.readOrNot = readOrNot;
-  this.info = function(){
-    let readStatus = this.readOrNot? "read":"not read yet";
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}`
-  }
-}
-
-// const theHobbit = new Book('The Hobbit','J.R.R Tolkein',295,false);
-// let text = theHobbit.info();
-// document.getElementById("app").innerText = text
-
-document.getElementById("submit").onclick = function () {
+  document.getElementById("submit").onclick = function () {
   document.getElementById("table").style.display = "block";
 
   var table = document.getElementById("table");
@@ -31,10 +14,27 @@ document.getElementById("submit").onclick = function () {
   book.innerText = document.getElementById("Book").value;
   title.innerText = document.getElementById("title").value;
   pages.innerText = document.getElementById("pages").value;
-  readOrNot.innerText = document.getElementById("readOrNot").value;
+
+  let readButton = document.createElement("button");
+  readButton.id = "btn";
+  readButton.onclick = function(){
+    if(readButton.textContent === "Read"){
+      readButton.textContent = "Not Read!"
+    }else if(readButton.textContent === "Not Read!"){
+      readButton.textContent = "Read"
+    }
+  }
+
+  if(document.getElementById("readOrNot").value ==="read"){
+    readButton.textContent = "Read"
+    readOrNot.appendChild(readButton)
+  }else{
+    readButton.textContent = "Not Read!"
+    readOrNot.appendChild(readButton)
+  }
 
   let removeButton = document.createElement("button");
-  removeButton.textContent = "remove";
+  removeButton.textContent = "Remove";
   removeButton.id = "btn"
 
   this.row = row;
@@ -44,8 +44,23 @@ document.getElementById("submit").onclick = function () {
     CurrentRow.remove();
   }
   remove.appendChild(removeButton);
-  // console.log(document.getElementById("table"))
 
   return false;
 }
 
+// const myLibrary = [];
+
+// function Book(title,author,pages,readOrNot){
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.readOrNot = readOrNot;
+//   this.info = function(){
+//     let readStatus = this.readOrNot? "read":"not read yet";
+//     return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}`
+//   }
+// }
+
+// const theHobbit = new Book('The Hobbit','J.R.R Tolkein',295,false);
+// let text = theHobbit.info();
+// document.getElementById("app").innerText = text

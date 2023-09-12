@@ -36,16 +36,18 @@ body,html{
     align-items: center;
 }
 
-#btn{
+#btn,
+ #submit{
     padding: 0.5rem 1rem; 
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: #90b5cf;
     border: 0;
     color: white;
     cursor: pointer;
 }
 
-#btn:hover{
+#btn:hover,
+#submit:hover{
     background-color: #71a6cc;
 }
 
@@ -66,8 +68,10 @@ table {
 
 th, td {
   text-align: left;
-  padding: 8px;
+  width: 200px;
   border: 1px solid black;
+  padding: 10px 0px 10px 10px;
+  
 }
 
 tr:nth-child(even) {
